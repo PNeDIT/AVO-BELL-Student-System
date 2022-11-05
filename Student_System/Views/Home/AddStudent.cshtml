@@ -1,0 +1,27 @@
+﻿@model Student
+
+<h3>Sign up:</h3>
+<hr />
+
+<form asp-controller="Home" asp-action="SaveStudent">
+
+    <label asp-for="FirstName"></label>
+    <input class="form-control" asp-for="FirstName" />
+
+    <label asp-for="LastName"></label>
+    <input class="form-control" asp-for="LastName" />
+
+    <label asp-for="Class"></label>
+    <input class="form-control" asp-for="Class" />
+
+    <label asp-for="AvgSuccess"></label>
+    <input class="form-control" asp-for="AvgSuccess" />
+
+    <label asp-for="DateOfBirth"></label>
+    <input class="form-control" asp-for="DateOfBirth" />
+
+    <br />
+    <br />
+
+    <button class="btn btn-outline-primary"> Add student</button>
+</form>

@@ -1,0 +1,50 @@
+﻿@model List<Student>
+
+<h3 style=" color: cadetblue"> Welcome to our Cambridge Advanced English preparation course! </h3>
+<br />
+<br />
+<br />
+<h5 style="margin-top:3%; margin-bottom:2%; color: dimgray"> Here you can see the names of our current students and their average success.</h5>
+
+@if (Model == null || Model.Count == 0)
+{
+    <h4>No students to show</h4>
+}
+else
+{
+
+    <div class="row">
+        <div style="text-align: center; color: dodgerblue; font-style: italic;" class="col-6">
+            <h5>Student</h5>
+        </div>
+        <div style="text-align: center; color: dodgerblue; font-style: italic;" class="col-6">
+            <h5>Average success</h5>
+
+        </div>
+    </div>
+    <hr />
+
+    @foreach (var student in Model)
+    {
+        <div class="student-list">
+            <div onclick="getStudent('@student.Id')" class="row">
+                <div style="text-align: center;" class="col-6 student-inf">
+                     @student.FirstName @student.LastName
+                </div>
+                <div style="text-align: center;" class="col-6">
+                     @student.AvgSuccess
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+    }
+}
+
+<script>
+    const getStudent = (id) => {
+        window.location = `/Home/GetStudent/${id}`
+    }
+</script>
+
